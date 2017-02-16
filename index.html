@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title style="text-align:center">赫驰车身改色定制</title>
+    <meta charset="utf-8">
+    <meta name="author" content="komi" />
+    <meta name="keywords" content="car" />
+    <meta name="description" content="komi" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta HTTP-EQUIV="Pragma" content="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" content="no-cache">
+    <meta HTTP-EQUIV="Expires" content="0">
+    <link rel="stylesheet" href="dist/style/style.css">
+    <script src="dist/three.js"></script>
+    <script src="dist/OrbitControls.js"></script>
+
+</head>
+
+
+<body oncontextmenu="window.event.returnvalue=false" style="width:100%;height:100%;">
+<audio style="display: none"  id="audio1"  soundtrack loop autoplay>
+  <SOURCE type="audio/mp3" src="model/summerMoments.mp3">
+</audio>
+    <!--缓冲界面-->
+    <div id="loaddng-box">
+        <img src="images/bg.png" style="height:100%;width:100%">
+        <div id="loadding-content">
+            <div id="loadding-contentbox">
+                <img src="images/logo.png" class="logo2" alt="logo">
+                <div id="loadingnum"></div>
+                <progress value="1" max="100" id="loading"></progress>
+            </div>
+        </div>
+    </div>
+
+    <!--选择车型-->
+    <div id="carStyle">
+        <img src="images/bg.png" style="height:100%;width:100%">
+        <div id="carStyle-box">
+            <div id="carStyle-middle">
+                <h5>车型选择</h5>
+                <ul>
+                    <li> <img src="images/baoma.png" class="baoma" onclick="show(this)" /></li>
+                    <!-- <li> <img src="images/luhu.png" class="luhu" onclick="show(this)" /></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="Interaction">
+        <!--右边颜色选择-->
+        <div id="carmodel">
+            <div id="carmodel_box">
+                <div id="colorStyle">
+                    <ul id="color-box">
+                        <li id="chinldcolor">
+                            <button class="color1" style="background: #000000"></button>
+                            <button class="color2" style="background: #ffffff;"></button>
+                            <button class="color3" style="background: #e3d85a;"></button>
+                            <button class="color4" style="background: #1c73cc;"></button>
+                            <button class="color5" style="background: #9deeff;"></button>
+                            <button class="color6" style="background: #a51b11;"></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--左边控制器-->
+        <div id="control">
+            <ul id="control_box">
+                <li id="carpatch">
+                    <span class="cheke" style="background:url(images/cheke.png) no-repeat left center">车身</span>
+                    <span class="cheding" style="background:url(images/cheding.png) no-repeat left center" >车顶</span>
+                    <span class="menba" style="background:url(images/menba.png) no-repeat left center">门把</span>
+                    <span class="shijing" style="background:url(images/shijing.png) no-repeat left center">车镜</span>
+                    <span class="zuoyi" style="background:url(images/zuoyi.png) no-repeat left center">座椅</span>
+                    <span class="lungu" style="background:url(images/lungu.png) no-repeat left center">车轮</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ThreeJS"> </div>
+
+    <script type="text/javascript">
+        function show(that) {
+            document.querySelector('#carStyle').style.display = 'none';
+            switch (that.className){
+                case('baoma'):
+                    renderCar('model/BMW/baoma.js','baoma');
+                    break;
+                case('luhu'):
+                    renderCar('model/landRover/luhu.js','luhu');
+                    break;
+            }
+        }
+    </script>
+    <script src="dist/catModels-js/catModels.js"></script>
+    <script src="dist/unit-js/unit.js"></script>
+</body>
+</html>

@@ -1,3 +1,2 @@
-# 需要放置服务器环境下才能跑
-##本地Appserv谁说不好用的？
-###还没做优化，速度有点慢哦
+## 在线观看地址：https://lgwen.github.io/threejs-car
+##threejs

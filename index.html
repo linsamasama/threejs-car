@@ -15,16 +15,7 @@
     <link rel="stylesheet" href="dist/style/style.css">
     <script src="dist/three.js"></script>
     <script src="dist/OrbitControls.js"></script>
- 
- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141229115-1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-141229115-1', { 'optimize_id': 'GTM-58XWPM4'});
-</script>
+<script src="https://mirror.testin.cn/testin-ab-v4.2.2.js"></script>
 
 </head>
 
@@ -110,5 +101,14 @@ gtag('config', 'UA-141229115-1', { 'optimize_id': 'GTM-58XWPM4'});
     </script>
     <script src="dist/catModels-js/catModels.js"></script>
     <script src="dist/unit-js/unit.js"></script>
+    <script>
+        var appKey = 'TESTIN_h67abb451-a6fa-44dc-a273-53de77500825';
+testinAB.init(appKey);
+
+testinAB.getVars(function(vars) {
+    //假设页面中有个按钮的id是btn，且用到了jquery，通过A/B测试来设置按钮的文字
+   document.querySelector('#carStyle-middle h5').html(vars.get('myText'));//通过变量loginTxt的值来设置按钮的文字
+});
+        </script>
 </body>
 </html>

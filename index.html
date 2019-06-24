@@ -107,7 +107,7 @@
         {datafile: window.optimizelyDatafile}
         );
                 var userId = `${+new Date()}`;
-                addCookie('userId',userId,3600/1)
+                addCookie('userId',userId,1)
                  var enabled = optimizelyClientInstance.isFeatureEnabled('first-feature', userId);
         var a = optimizelyClientInstance.getFeatureVariableString('first-feature', 'var', userId);
 

@@ -107,9 +107,7 @@
             date.setTime(date.getTime() + ms);
             str += "; expires=" + date.toUTCString();
         }
-        if (this.isBlank(location.port)) {
-            str += "";
-        }
+       
         str += ""; path="/";
         document.cookie = str;
     }

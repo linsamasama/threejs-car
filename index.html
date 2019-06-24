@@ -108,9 +108,9 @@
             str += "; expires=" + date.toUTCString();
         }
         if (this.isBlank(location.port)) {
-            str += ";
+            str += "";
         }
-        str += "; path=/";
+        str += ""; path="/";
         document.cookie = str;
     }
      

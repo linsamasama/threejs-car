@@ -104,13 +104,12 @@
     }
      
         var optimizelyClientInstance = optimizelySdk.createInstance(
-        {datafile: window.optimizelyDatafile}
+        	{datafile: window.optimizelyDatafile}
         );
-                var userId = `${+new Date()}`;
-                addCookie('userId',userId,1)
-                 var enabled = optimizelyClientInstance.isFeatureEnabled('first-feature', userId);
+        var userId = `${+new Date()}`;
+        addCookie('userId',userId,1)
+        var enabled = optimizelyClientInstance.isFeatureEnabled('first-feature', userId);
         var a = optimizelyClientInstance.getFeatureVariableString('first-feature', 'var', userId);
-
         console.log(a)
         </script>
     <script src="dist/catModels-js/catModels.js"></script>

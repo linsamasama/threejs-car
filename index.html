@@ -86,20 +86,6 @@
     </div>
 
     <div id="ThreeJS"> </div>
-
-    <script type="text/javascript">
-        function show(that) {
-            document.querySelector('#carStyle').style.display = 'none';
-            switch (that.className){
-                case('baoma'):
-                    renderCar('model/BMW/baoma.js','baoma');
-                    break;
-                case('luhu'):
-                    renderCar('model/landRover/luhu.js','luhu');
-                    break;
-            }
-        }
-    </script>
     <script>
         function getCookie (objName) {
         var arrStr = document.cookie.split("; ");
@@ -141,5 +127,19 @@
         </script>
     <script src="dist/catModels-js/catModels.js"></script>
     <script src="dist/unit-js/unit.js"></script>
+	    <script type="text/javascript">
+        function show(that) {
+            document.querySelector('#carStyle').style.display = 'none';
+            switch (that.className){
+                case('baoma'):
+                    renderCar('model/BMW/baoma.js','baoma');
+                    break;
+                case('luhu'):
+                    renderCar('model/landRover/luhu.js','luhu');
+                    break;
+            }
+	optimizelyClientInstance.track('click', getCookie('userId');
+        }
+    </script>
 </body>
 </html>

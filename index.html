@@ -106,8 +106,9 @@
         var optimizelyClientInstance = optimizelySdk.createInstance(
         	{datafile: window.optimizelyDatafile}
         );
-        var userId = `${+new Date()}`;
+        var userId = getCookie('userId') || `${+new Date()}`;
         !getCookie('userId') && addCookie('userId',userId,8)
+	
         var enabled = optimizelyClientInstance.isFeatureEnabled('first-feature', userId);
         var a = optimizelyClientInstance.getFeatureVariableString('first-feature', 'var', userId);
         console.log(a)

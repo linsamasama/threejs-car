@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="dist/style/style.css">
     <script src="dist/three.js"></script>
     <script src="dist/OrbitControls.js"></script>
-<script src="https://mirror.testin.cn/testin-ab-v4.2.2.js"></script>
-
+    <script src="https://unpkg.com/@optimizely/optimizely-sdk/dist/optimizely.browser.umd.js"></script > 
+	<script src="https://cdn.optimizely.com/datafiles/6Evom8vXcdwLMmNatdvAfc.json/tag.js"></script>
+<script>
 </head>
 
 
@@ -24,7 +25,7 @@
 <audio style="display: none"  id="audio1"  soundtrack loop autoplay>
   <SOURCE type="audio/mp3" src="">
 </audio>
-    <!--缓冲界面-->
+    
     <div id="loaddng-box">
         <img src="images/bg.png" style="height:100%;width:100%">
         <div id="loadding-content">
@@ -99,6 +100,45 @@
             }
         }
     </script>
+    <script>
+        function getCookie (objName) {
+        var arrStr = document.cookie.split("; ");
+        for (var i = 0; i < arrStr.length; i++) {
+            var current = arrStr[i].replace("=", "$=");
+            var temp = current.split("$=");
+            try {
+                if (temp[0] == objName) return decodeURIComponent(temp[1]);
+            } catch (e) {
+                if (temp[0] == objName) return unescape(temp[1]);
+            }
+        }
+        return '';
+    },
+    function addCookie(objName, objValue, objHours) {
+        var str = objName + "=" + encodeURIComponent(objValue);
+        if (objHours > 0) { //为时不设定过期时间，浏览器关闭时cookie自动消失
+            var date = new Date();
+            var ms = objHours * 3600 * 1000;
+            date.setTime(date.getTime() + ms);
+            str += "; expires=" + date.toUTCString();
+        }
+        if (this.isBlank(location.port)) {
+            str += ";
+        }
+        str += "; path=/";
+        document.cookie = str;
+    }
+     
+        var optimizelyClientInstance = optimizelySdk.createInstance(
+        {datafile: window.optimizelyDatafile}
+        );
+                var userId = +new Date();
+                addCookie('userId',userId,8)
+                 var enabled = optimizelyClientInstance.isFeatureEnabled('first-feature', userId);
+        var a = optimizelyClientInstance.getFeatureVariableString('first-feature', 'var', userId);
+
+        console.log(a)
+        </script>
     <script src="dist/catModels-js/catModels.js"></script>
     <script src="dist/unit-js/unit.js"></script>
 </body>
